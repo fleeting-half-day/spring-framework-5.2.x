@@ -1,6 +1,5 @@
-package io.holcyr.howay.processors;
+package com.holcyr.howhy.processor;
 
-import io.holcyr.howay.beans.LifeCycle;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @project spring
  * @Description
  * @encoding UTF-8
- * @datetime 2020/3/30 16:55
+ * @datetime 2020/5/19 18:24
  * @修改记录 <pre>
  * 版本       修改人         修改时间         修改内容描述
  * --------------------------------------------------

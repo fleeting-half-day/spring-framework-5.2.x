@@ -1,4 +1,4 @@
-package io.holcyr.howay.config;
+package com.holcyr.howhy.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * @project spring
  * @Description
  * @encoding UTF-8
- * @datetime 2020/3/25 13:32
+ * @datetime 2020/5/19 18:20
  * @修改记录 <pre>
  * 版本       修改人         修改时间         修改内容描述
  * --------------------------------------------------
@@ -17,17 +17,6 @@ import org.springframework.context.annotation.Configuration;
  * </pre>
  */
 @Configuration
-@ComponentScan(value = "io.holcyr.howay")
-public class HowayConfiguration {
-
-//	@Bean
-//	public First first() {
-//		return new First();
-//	}
-//
-//	@Bean
-//	public LifeCycle01 lifeCycle01() {
-//		return new LifeCycle01();
-//	}
-
+@ComponentScan(value = "com.holcyr.howhy")
+public class HowhyConfiguration {
 }

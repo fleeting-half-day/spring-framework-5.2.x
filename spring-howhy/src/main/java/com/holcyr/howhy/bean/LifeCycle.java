@@ -1,8 +1,10 @@
-package io.holcyr.howay.beans;
+package com.holcyr.howhy.bean;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author wangxinlei
@@ -20,13 +22,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class LifeCycle implements InitializingBean {
 
-	@Autowired
-	First first;
-
 	public LifeCycle() {
 		System.out.println("=========================");
 		System.out.println("new LifeCycle()");
-		System.out.println(this.first);
 	}
 
 	/**
@@ -34,7 +32,13 @@ public class LifeCycle implements InitializingBean {
 	 */
 	@Override
 	public void afterPropertiesSet() throws Exception {
+		System.out.println("=========================");
 		System.out.println("InitializingBean.afterPropertiesSet()");
-		System.out.println(this.first);
+	}
+
+	@PostConstruct
+	public void postConstruct() {
+		System.out.println("=========================");
+		System.out.println("@PostConstruct");
 	}
 }
