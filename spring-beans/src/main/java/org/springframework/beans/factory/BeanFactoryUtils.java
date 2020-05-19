@@ -84,6 +84,7 @@ public abstract class BeanFactoryUtils {
 			return name;
 		}
 		return transformedBeanNameCache.computeIfAbsent(name, beanName -> {
+			// 如果beanName带有 "&" 前缀，则去掉
 			do {
 				beanName = beanName.substring(BeanFactory.FACTORY_BEAN_PREFIX.length());
 			}
