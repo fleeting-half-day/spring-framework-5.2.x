@@ -1,14 +1,13 @@
-package com.holcyr.howhy.config;
+package com.holcyr.howhy.bean;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 /**
  * @author wangxinlei
  * @project spring
  * @Description
  * @encoding UTF-8
- * @datetime 2020/5/19 18:20
+ * @datetime 2020/7/28 15:16
  * @修改记录 <pre>
  * 版本       修改人         修改时间         修改内容描述
  * --------------------------------------------------
@@ -16,8 +15,6 @@ import org.springframework.context.annotation.Configuration;
  * --------------------------------------------------
  * </pre>
  */
-@Configuration
-@ComponentScan(value = "com.holcyr.howhy")
-public class HowhyConfiguration {
-
+@Component
+public class Test {
 }

@@ -19,8 +19,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class HowhyMain {
 
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext context
-				= new AnnotationConfigApplicationContext(HowhyConfiguration.class);
+//		AnnotationConfigApplicationContext context
+//				= new AnnotationConfigApplicationContext(HowhyConfiguration.class);
+//
+//		context.getBean("lifeCycle");
 	}
 
 }

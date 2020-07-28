@@ -523,9 +523,11 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			// Tell the subclass to refresh the internal bean factory.
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
-			// 配置 BeanFactory 的标准上下文特征，ClassLoader、后置处理器等
-			// 注册 3 个默认环境 bean：environment、systemProperties、systemEnvironment
+			// 配置 BeanFactory 的标准上下文特征
+			// 设置 ClassLoader、语言解析器（StandardBeanExpressionResolver解析EL表达式）、属性编辑注册器（ResourceEditorRegistrar）
 			// 注册 2 个 bean 后置处理器：ApplicationContextAwareProcessor、ApplicationListenerDetector
+			// 注册 3 个默认环境 bean：environment、systemProperties、systemEnvironment
+			// 忽略自动装配的几个接口、设置自动装配的特殊规则
 			// Prepare the bean factory for use in this context.
 			prepareBeanFactory(beanFactory);
 
@@ -678,6 +680,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		beanFactory.setBeanClassLoader(getClassLoader());
 		// 设置语言解析器
 		beanFactory.setBeanExpressionResolver(new StandardBeanExpressionResolver(beanFactory.getBeanClassLoader()));
+		// 设置属性编辑注册器
 		beanFactory.addPropertyEditorRegistrar(new ResourceEditorRegistrar(this, getEnvironment()));
 
 		// 添加ApplicationContextAwareProcessor处理器
@@ -691,7 +694,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		beanFactory.ignoreDependencyInterface(MessageSourceAware.class);
 		beanFactory.ignoreDependencyInterface(ApplicationContextAware.class);
 
-		// //设置自动装配的特殊规则
+		// 设置自动装配的特殊规则
 		// BeanFactory interface not registered as resolvable type in a plain factory.
 		// MessageSource registered (and found for autowiring) as a bean.
 		beanFactory.registerResolvableDependency(BeanFactory.class, beanFactory);

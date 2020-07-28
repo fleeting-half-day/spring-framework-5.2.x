@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 
 /**
  * @author wangxinlei
@@ -22,9 +23,15 @@ import javax.annotation.PostConstruct;
 @Component
 public class LifeCycle implements InitializingBean {
 
+	@Resource
+	private Test test;
+
 	public LifeCycle() {
-		System.out.println("=========================");
-		System.out.println("new LifeCycle()");
+
+		System.out.println();
+		System.out.println(test);
+		System.out.println("LifeCycle()");
+		System.out.println("=============");
 	}
 
 	/**
@@ -32,13 +39,17 @@ public class LifeCycle implements InitializingBean {
 	 */
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("=========================");
+
+		System.out.println();
 		System.out.println("InitializingBean.afterPropertiesSet()");
+		System.out.println("=============");
 	}
 
 	@PostConstruct
 	public void postConstruct() {
-		System.out.println("=========================");
+
+		System.out.println();
 		System.out.println("@PostConstruct");
+		System.out.println("=============");
 	}
 }
