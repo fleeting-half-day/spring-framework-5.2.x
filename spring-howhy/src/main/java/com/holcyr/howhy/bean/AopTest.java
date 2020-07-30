@@ -1,5 +1,6 @@
 package com.holcyr.howhy.bean;
 
+import com.holcyr.howhy.aspect.AopAnno;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,5 +17,20 @@ import org.springframework.stereotype.Component;
  * </pre>
  */
 @Component
-public class Test {
+public class AopTest {
+
+	public void aopT1() {
+		System.out.println();
+		System.out.println("aopT1");
+		this.aopT2();
+	}
+
+	@AopAnno
+	public void aopT2() {
+
+		System.out.println();
+		System.out.println("aopT2");
+
+	}
+
 }

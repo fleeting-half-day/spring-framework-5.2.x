@@ -1,7 +1,11 @@
 package com.holcyr.howhy.config;
 
+import com.holcyr.howhy.aspect.AspectTest;
+import com.holcyr.howhy.bean.AopTest;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * @author wangxinlei
@@ -18,6 +22,17 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan(value = "com.holcyr.howhy")
+@EnableAspectJAutoProxy
 public class HowhyConfiguration {
+
+	@Bean
+	public AopTest aopTest() {
+		return new AopTest();
+	}
+
+	@Bean
+	public AspectTest aspectTest() {
+		return new AspectTest();
+	}
 
 }

@@ -1,11 +1,9 @@
 package com.holcyr.howhy.bean;
 
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 
 /**
  * @author wangxinlei
@@ -23,13 +21,8 @@ import javax.annotation.Resource;
 @Component
 public class LifeCycle implements InitializingBean {
 
-	@Resource
-	private Test test;
-
 	public LifeCycle() {
-
 		System.out.println();
-		System.out.println(test);
 		System.out.println("LifeCycle()");
 		System.out.println("=============");
 	}

@@ -13,6 +13,7 @@ repositories {
 
 dependencies {
 
+    optional("org.aspectj:aspectjweaver")
     compile project(":spring-context")
     compile project(":spring-jdbc")
     compile project(":spring-tx")

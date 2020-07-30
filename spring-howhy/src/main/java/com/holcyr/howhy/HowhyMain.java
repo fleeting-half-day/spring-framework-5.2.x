@@ -1,6 +1,9 @@
 package com.holcyr.howhy;
 
+import com.holcyr.howhy.bean.AopTest;
+import com.holcyr.howhy.bean.LifeCycle;
 import com.holcyr.howhy.config.HowhyConfiguration;
+import org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -19,10 +22,17 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class HowhyMain {
 
 	public static void main(String[] args) {
-//		AnnotationConfigApplicationContext context
-//				= new AnnotationConfigApplicationContext(HowhyConfiguration.class);
-//
-//		context.getBean("lifeCycle");
+		AnnotationConfigApplicationContext context
+				= new AnnotationConfigApplicationContext(HowhyConfiguration.class);
+
+//		LifeCycle lifeCycle = context.getBean(LifeCycle.class);
+		AopTest aopTest = context.getBean(AopTest.class);
+
+		System.out.println(aopTest);
+
+		aopTest.aopT2();
+
+//		AnnotationAwareAspectJAutoProxyCreator
 	}
 
 }
