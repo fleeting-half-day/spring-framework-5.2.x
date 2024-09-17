@@ -31,7 +31,7 @@ public class HowhyMain {
 		System.out.println(aopTest);
 
 		aopTest.aopT2();
-
+//		AbstractAutowireCapableBeanFactory
 //		AnnotationAwareAspectJAutoProxyCreator
 	}
 

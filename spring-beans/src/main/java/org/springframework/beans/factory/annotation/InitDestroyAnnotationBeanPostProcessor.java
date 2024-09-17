@@ -230,6 +230,8 @@ public class InitDestroyAnnotationBeanPostProcessor
 			final List<LifecycleElement> currDestroyMethods = new ArrayList<>();
 
 			ReflectionUtils.doWithLocalMethods(targetClass, method -> {
+				// 如果方法包括 initAnnotationType(PostConstruct.class) 注解，方法添加到 initMethods
+				// initAnnotationType 的值见子类 CommonAnnotationBeanPostProcessor 构造方法
 				if (this.initAnnotationType != null && method.isAnnotationPresent(this.initAnnotationType)) {
 					LifecycleElement element = new LifecycleElement(method);
 					currInitMethods.add(element);
